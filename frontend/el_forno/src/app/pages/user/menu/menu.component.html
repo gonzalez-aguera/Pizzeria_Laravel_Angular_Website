@@ -1,0 +1,25 @@
+<div class="container">
+    <div *ngFor="let category of getCategories()">
+        <h2>{{ category }}</h2>
+        <div class="row">
+            <div class="col-sm-4" *ngFor="let card of categorizedCards[category]">
+                <div class="card">
+                    <img [src]="'../assets/images/' + card.photo" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h4>{{card.name}}</h4>
+                        <h5 class="card-title">{{ card.title }}</h5>
+                        <p class="card-text">{{ card.description }}</p>
+                        <p class="card-text">{{ card.price }}€</p>
+
+                        <div class="card-action"  *ngIf="idCustomer">
+                            <input type="number" class="form-control input-quantity" placeholder="Quantity" min="1" max="10" [(ngModel)]="card.quantity" #quantityInput>
+                            <button class="btn btn-custom-add" (click)="addToCart(card)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,24 @@
+.footer {
+    background-color: #3b6064;
+    color: #fff;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+img {
+    width: 300px;
+}
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    width: 100%;
+}
+
+.box {
+    color: #fff;
+    align-items: center;
+    text-align: center;
+}

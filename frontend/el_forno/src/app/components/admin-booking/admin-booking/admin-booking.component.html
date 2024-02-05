@@ -1,0 +1,68 @@
+<div class="container-2">
+    <div class="div-form">
+        <h2>{{ isEditing ? 'Editar reserva' : 'Agregar reserva' }}</h2>
+        <form [formGroup]="reservationForm" novalidate>
+            <div class="form-group">
+                <label for="name">Nombre del cliente:</label>
+                <input type="text" class="form-control" id="name" formControlName="name" required>
+            </div>
+
+            <div *ngIf="reservationForm.get('name')?.hasError('required') && reservationForm.get('name')?.touched" class="alert alert-danger">
+                El nombre es obligatorio
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Teléfono del cliente:</label>
+                <input type="string" class="form-control" id="phone" formControlName="phone" required>
+            </div>
+
+            <div *ngIf="reservationForm.get('phone')?.hasError('required') && reservationForm.get('phone')?.touched" class="alert alert-danger">
+                El teléfono es obligatorio
+            </div>
+
+            <div class="form-group">
+                <label for="place">Sitio de la reserva:</label>
+                <select class="form-control" id="place" formControlName="place" required>
+                    <option value="" disabled selected>Selecciona un lugar</option>
+                    <option value="inside">Dentro</option>
+                    <option value="outside">Fuera</option>
+                </select>
+            </div>
+
+            <div *ngIf="reservationForm.get('place')?.hasError('required') && reservationForm.get('place')?.touched" class="alert alert-danger">
+                El sitio es obligatorio
+            </div>
+
+            <div class="form-group">
+                <label for="numberPeople">Número de personas:</label>
+                <input type="number" class="form-control" id="numberPeople" formControlName="numberPeople" required>
+            </div>
+
+            <div *ngIf="reservationForm.get('numPeople')?.hasError('required') && reservationForm.get('numPeople')?.touched" class="alert alert-danger">
+                El número es obligatorio
+            </div>
+
+            <div class="form-group">
+                <label for="date">Fecha de la reserva:</label>
+                <input type="date" class="form-control" id="date" formControlName="date" required>
+            </div>
+
+            <div *ngIf="reservationForm.get('date')?.hasError('required') && reservationForm.get('date')?.touched" class="alert alert-danger">
+                La fecha es obligatorio
+            </div>
+
+            <div class="form-group">
+                <label for="time">Hora de la reserva</label>
+                <input type="time" class="form-control" id="time" formControlName="time" required>
+            </div>
+
+            <div *ngIf="reservationForm.get('time')?.hasError('required') && reservationForm.get('time')?.touched" class="alert alert-danger">
+                La hora es obligatorio
+            </div>
+            
+            <button *ngIf="!isEditing" type="submit" class="btn btn-primary me-3" [disabled]="reservationForm.invalid" (click)="addReservation()">Agregar</button>
+            <button *ngIf="isEditing"  type="submit" class="btn btn-primary me-3" [disabled]="reservationForm.invalid" (click)="editReservation()">Editar</button>
+            <button type="submit" class="btn btn-success" (click)="goBack()">Volver</button>
+        </form>
+    </div>
+</div>

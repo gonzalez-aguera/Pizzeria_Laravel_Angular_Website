@@ -1,0 +1,18 @@
+.row {
+    position: relative;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.total{
+    margin-top: 100px;
+    text-align: center;
+}

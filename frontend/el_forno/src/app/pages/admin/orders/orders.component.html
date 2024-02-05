@@ -1,0 +1,50 @@
+<div class="container mt-4">
+    <h2>Lista de Pedidos</h2>
+    <table class="table">
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let order of filteredOrders">
+            <td>{{ order.name }}</td>
+            <td>{{ order.date }}</td>
+            <td>{{ order.time }}</td>
+            <td>{{ order.address }}</td>
+            <td>{{ order.phone }}</td>
+            <td>
+                <button class="btn btn-custom-edit me-3" (click)="showOrders(order)">Mostrar</button>
+                <button class="btn btn-danger" (click)="deleteOrder(order)">Eliminar</button>
+            </td>
+        </tr>
+
+        <!-- Detalles del pedido -->
+        <ng-container *ngIf="orderDetails.length > 0">
+            <tr>
+                <td colspan="6">
+                    <div class="mt-5 details-container">
+                        <p><strong>Detalles del Pedido:</strong></p>
+                        <ul class="display">
+                            <li>
+                                <p class="text-start"><b>Producto:</b></p>
+                                <p class="text-start"><b>Descripción:</b></p>
+                                <p><b>Cantidad:</b></p>
+                                <p><b>Precio:</b></p>
+                            </li>
+                            <li *ngFor="let detail of orderDetails">
+                                <p class="text-start"> {{ detail.producto }}</p>
+                                <p class="text-start"> {{ detail.description }}</p>
+                                <p> {{ detail.quantity }}</p>
+                                <p> {{ detail.totalPrice }}</p>
+                            </li>                        
+                        </ul>
+                        <button class="btn btn-success" (click)="closeDetails()">Cerrar Detalles</button>
+                    </div>
+                </td>
+            </tr>
+        </ng-container>
+    </table>
+</div>

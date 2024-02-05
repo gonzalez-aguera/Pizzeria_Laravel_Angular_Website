@@ -1,0 +1,47 @@
+<div class="btn-cart">
+    <button class="btn btn-primary mt-3" (click)="showAddForm()">Agregar Reserva</button>
+</div>
+
+<div class="container">
+    <div class="row">
+        <h2 style="margin-top: 30px; width: 1080px;">Reservas</h2>
+        <div class="col-md-10">
+
+            <div class="d-flex justify-content-end align-items-end mb-3">
+                <div class="w-30 me-2">
+                    <input type="text" id="searchDate" class="form-control" [(ngModel)]="searchDate" placeholder="dd/MM/yyyy">
+                </div>
+                <button class="btn btn-custom-edit me-2" (click)="applyDateFilter()">Buscar</button>
+                <button class="btn btn-success" (click)="clearDateFilter()">Limpiar</button>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Lugar</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Teléfono</th>
+                        <th class="text-center">Personas</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let reservation of reservations">
+                        <td>{{ reservation.name }}</td>
+                        <td>{{ reservation.place }}</td>
+                        <td>{{ reservation.date | date: 'dd/MM/yyyy' }}</td>
+                        <td>{{ reservation.time }}</td>
+                        <td>{{ reservation.phone }}</td>
+                        <td class="text-center">{{ reservation.numberPeople }}</td>
+                        <td>
+                            <button class="btn btn-danger me-3" (click)="deleteReservation(reservation)">Eliminar</button>
+                            <button class="btn btn-custom-edit" (click)="editReservation(reservation)">Editar</button>
+                        </td>                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

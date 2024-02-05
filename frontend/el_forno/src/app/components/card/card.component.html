@@ -1,0 +1,61 @@
+<div class="container-2">
+    <div class="div-form">
+        <h2>{{ isEditing ? 'Editar Producto' : 'Agregar Producto' }}</h2>
+            <form [formGroup]="productForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" class="form-control" id="name" formControlName="name" required>
+                </div>
+
+                <div *ngIf="productForm.get('name')?.hasError('required') && productForm.get('name')?.touched" class="alert alert-danger">
+                    El nombre es obligatorio
+                </div>
+
+                <div class="form-group">
+                    <label for="photo">Foto:</label>
+                    <input type="text" class="form-control" id="photo" formControlName="photo" required>
+                </div>
+
+                <div *ngIf="productForm.get('photo')?.hasError('required') && productForm.get('photo')?.touched" class="alert alert-danger">
+                    La foto es obligatoria
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Descripción:</label>
+                    <textarea class="form-control" id="description" formControlName="description" required></textarea>
+                </div>
+
+                <div *ngIf="productForm.get('description')?.hasError('required') && productForm.get('description')?.touched" class="alert alert-danger">
+                    La descripcion es obligatoria
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Tipo:</label>
+                    <select class="form-control" id="type" formControlName="type" required>
+                        <option value="" disabled selected>Selecciona un tipo</option>
+                        <option value="pizza">Pizza</option>
+                        <option value="roasted potato">Roasted Potato</option>
+                        <option value="drink">Drink</option>
+                        <option value="meat">Meat</option>
+                    </select>
+                </div>
+                
+                <div *ngIf="productForm.get('type')?.hasError('required') && productForm.get('type')?.touched" class="alert alert-danger">
+                    El tipo es obligatorio
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Precio:</label>
+                    <input type="number" class="form-control" id="price" formControlName="price" step="0.01" required>
+                </div>
+
+                <div *ngIf="productForm.get('price')?.hasError('required') && productForm.get('price')?.touched" class="alert alert-danger">
+                    El precio es obligatorio
+                </div>
+                
+                <button *ngIf="!isEditing" type="submit" class="btn btn-primary me-3" [disabled]="productForm.invalid" (click)="addProduct()" >Agregar</button>
+                <button *ngIf="isEditing"  type="submit" class="btn btn-primary me-3" [disabled]="productForm.invalid" (click)="editProduct()">Editar</button>
+                <button type="submit" class="btn btn-success" (click)="goBack()">Volver</button>
+            </form>
+    </div>
+</div>

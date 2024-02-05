@@ -1,0 +1,15 @@
+/* Estilo para la línea de separación */
+.row {
+    position: relative;
+}
+
+.row::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: black;
+    transform: translateX(-50%);
+}

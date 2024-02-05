@@ -1,0 +1,35 @@
+<div class="container-2 ">
+    <div class="div-form">
+        <h3>Añadir ingredientes</h3>
+        <div>
+            <form [formGroup]="ingredientForm" (ngSubmit)="addIngredients()" novalidate>
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" class="form-control" id="name" formControlName="name" name="name">
+                </div>
+
+                <div *ngIf="ingredientForm.get('name')?.hasError('required') && ingredientForm.get('name')?.touched"
+                    class="alert alert-danger">
+                    El nombre es obligatorio
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Tipo:</label>
+                    <select class="form-control" id="type" formControlName="productType" name="type">
+                        <option value="" disabled selected>Selecciona un tipo</option>
+                        <option value="Pizza">Pizza</option>
+                        <option value="Papa">Papa</option>
+                    </select>
+                </div>
+
+                <div *ngIf="ingredientForm.get('productType')?.hasError('required') && ingredientForm.get('productType')?.touched"
+                    class="alert alert-danger">
+                    El tipo es obligatorio
+                </div>
+
+                <button type="submit" class="btn btn-primary me-3" [disabled]="ingredientForm.invalid">Añadir</button>
+                <button type="submit" class="btn btn-success" (click)="goBack()">Volver</button>
+            </form>
+        </div>
+    </div>
+</div>

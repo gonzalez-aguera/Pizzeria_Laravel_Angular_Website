@@ -1,0 +1,27 @@
+.container h3{
+    text-align: center;
+}
+
+.margin-div{
+    margin: 100px 0;
+}
+
+.btn-cart{
+    display: flex;
+    justify-content: center;
+    margin: 50px 50px;
+}
+
+table tbody tr td, table thead tr th{
+    padding-left: 150px;
+}
+
+table, .div-width{
+    width: 900px;
+}
+
+.container, .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

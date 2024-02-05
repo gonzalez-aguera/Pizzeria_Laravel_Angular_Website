@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <div *ngIf="pizzas.length > 0" class="div-width">
+        <h3>Pizza</h3>
+        <div class="row">
+            <div class="col">
+                <div class="form-check" *ngFor="let ingrediente of pizzas">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="ingrediente.selected">
+                    <label class="form-check-label">{{ ingrediente.name }}</label>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary btn-pizza" (click)="agregarAlCarrito('Pizza')">Añadir al carrito</button>
+        </div>
+    </div>
+
+    <div *ngIf="papas.length > 0" class="div-width mb-5">
+        <h3>Papas</h3>
+        <div class="row">
+            <div class="col">
+                <div class="form-check" *ngFor="let ingrediente of papas">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="ingrediente.selected">
+                    <label class="form-check-label">{{ ingrediente.name }}</label>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" (click)="agregarAlCarrito('Papa')">Añadir al carrito</button>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

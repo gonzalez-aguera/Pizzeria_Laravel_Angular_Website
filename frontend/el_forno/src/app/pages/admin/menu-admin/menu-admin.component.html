@@ -1,0 +1,26 @@
+<div class="btn-cart">
+    <button class="btn btn-primary mt-3" (click)="showAddForm()">Agregar Producto</button>
+</div>
+
+<div class="container">
+    <div *ngFor="let category of getCategories()">
+        <h2>{{ category }}</h2>
+        <div class="row">
+            <div class="col-sm-4" *ngFor="let card of categorizedCards[category]">
+                <div class="card">
+                    <img [src]="'../assets/images/' + card.photo" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h4>{{card.name}}</h4>
+                        <h5 class="card-title">{{ card.title }}</h5>
+                        <p class="card-text">{{ card.description }}</p>
+                        <p class="card-text">{{ card.price }}€</p>
+                    </div>
+                    <div class="btn mb-3">
+                        <button class="btn btn-custom-edit me-5" (click)="editProduct(card)">Editar</button>
+                        <button class="btn btn-danger" (click)="deleteCard(card)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

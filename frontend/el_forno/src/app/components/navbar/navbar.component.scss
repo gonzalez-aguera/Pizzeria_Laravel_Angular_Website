@@ -1,0 +1,35 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-item-admin{
+    margin: 0 5em;
+}
+
+.nav-item{
+    margin: 0 7em;
+}
+
+.nav-item-menu{
+    margin: 0 1.5em;
+}
+
+.logo{
+    height: 50px;
+    width: 200px;
+}
+
+.navbar-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+}
+
+.navbar{
+    background-color: #698F3F;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 1em 0;
+}

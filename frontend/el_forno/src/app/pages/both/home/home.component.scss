@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.offers {
+    width: 33%;
+    box-sizing: border-box;
+}
+
+.offer-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.product {
+    border: 1px solid black;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+}
+
+img{
+    width: 380px;
+    height: 200px;
+    border-radius: 25px;
+}
+
+.title{
+    display: flex;  
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.title p{
+    margin: 0;
+}
+

@@ -1,0 +1,35 @@
+@startuml
+
+title El Forno
+
+:User: -up-> (Ver perfil)
+:User: -up-> (Ver inicio)
+:User: -up-> (Login)
+:User: -up-> (Logout)
+:User: -up-> (Ver menu)
+:User: -up-> (Editar perfil)
+:User: --> (Añadir productos al carrito)
+:User: --> (Eliminar productos del carrito)
+:User: --> (Realizar un pedido)
+:User: --> (Reservar)
+:User: --> (Crear una pizza al gusto)
+:User: --> (Crear una papa al gusto)
+:User: --> (Ver carrito)
+
+left to right direction
+
+:Admin: --> (Eliminar ingredientes)
+:Admin: --> (Añadir ingredientes)
+:Admin: --> (Ver reseñas)
+:Admin: --> (Ver pedidos)
+:Admin: --> (Eliminar un producto)
+:Admin: --> (Añadir un producto)
+:Admin: --> (Editar un producto)
+:Admin: --> (Ver perfil)
+:Admin: --> (Ver inicio)
+:Admin: --> (Login)
+:Admin: --> (Logout)
+:Admin: --> (Ver menu)
+:Admin: --> (Editar perfil)
+
+@enduml

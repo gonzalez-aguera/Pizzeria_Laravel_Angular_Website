@@ -1,0 +1,40 @@
+<div class="container mt-4">
+    <h2>Realizar pedido</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre del Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of order">
+                <td>{{ order.name }}</td>
+                <td>{{ order.price}} €</td>
+                <td>{{ order.quantity}}</td>
+                <td>{{ order.totalPrice }} €</td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="eliminarPedido(order)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="row">
+        <div class="col-md-5">
+            <div class="cart-buttons">                
+                <button type="button" class="btn btn-primary" (click)="seleccionarParaLlevar()">Para Llevar</button>
+                <button type="button" class="btn btn-primary" (click)="seleccionarRecoger()">Recoger en el Establecimiento</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="total">
+        <h3>Total del Pedido: {{ totalPrice }} €</h3>
+    </div>
+
+    <button type="button" class="btn btn-success" (click)="finalizarPedido()">Finalizar Pedido</button>
+</div>

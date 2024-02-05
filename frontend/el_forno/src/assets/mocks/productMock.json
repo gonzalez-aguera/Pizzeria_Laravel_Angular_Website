@@ -1,0 +1,23 @@
+[
+    {
+        "id": 10000,
+        "image": "../assets/images/oferts/3pizzas.jpeg",
+        "name": "Tres pizzas",
+        "description": "Llevate tres pizzas medianas con tres bebidas gratis",
+        "price": 24.00
+    },
+    {
+        "id": 10001,
+        "image": "../assets/images/oferts/2pizzas.jpeg",
+        "name": "Dos pizzas",
+        "description": "Llévate dos pizzas y dos bebida gratis",
+        "price": 13.00
+    },
+    {
+        "image": "../assets/images/oferts/2papas.jpeg",
+        "id": 10002,
+        "name": "Dos papas",
+        "description": "LLevate dos papas con dos bebidas gratis",
+        "price": 10
+    }
+]
